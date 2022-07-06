@@ -24,7 +24,7 @@ Compra de Passagem
     E marco a opcao Remember me
     E clico no botao "Purchase flight"
     Entao exibe a mensagem "Thank you for your purchase today!"
-    #E exibe o preco da passagem como "555 USD"
+    E exibe o preco da passagem como "555 USD"
 
 *** Keywords ***
 Dado que acesso o site Blazedemo
@@ -55,8 +55,8 @@ E clico no botao "Purchase flight"
     click button   class = btn.btn-primary
 Entao exibe a mensagem "Thank you for your purchase today!"
     element should contain  xpath = //h1    Thank you for your purchase today!
-#E exibe o preco da passagem como "555 USD"
-#    element should contain  xpath = //td[contains(.,'555 USD')]    555 USD
+E exibe o preco da passagem como "555 USD"
+    element should contain   xpath=//table[@class="table"]//tr[td[.="Amount"]]//td[2]    555 USD
 Encerrar
     sleep       4000ms
     close browser
