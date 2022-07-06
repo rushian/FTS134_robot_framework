@@ -56,6 +56,7 @@ E clico no botao "Purchase flight"
 Entao exibe a mensagem "Thank you for your purchase today!"
     element should contain  xpath = //h1    Thank you for your purchase today!
 E exibe o preco da passagem como "555 USD"
+    #xpath: encontrar linha que contenha o texto Amount e pegar o valor da segunda celula
     element should contain   xpath=//table[@class="table"]//tr[td[.="Amount"]]//td[2]    555 USD
 Encerrar
     sleep       4000ms
