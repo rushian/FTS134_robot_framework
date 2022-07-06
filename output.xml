@@ -1,134 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220706 01:19:23.951" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220706 01:26:57.414" rpa="false" schemaversion="3">
 <suite id="s1" name="Compra" source="E:\dev\pyCharm\FTS134_robot_framework\compra.robot">
-<test id="s1-t1" name="Compra de Passagem" line="16">
+<test id="s1-t1" name="Compra de Passagem" line="15">
 <kw name="Log To Console" library="BuiltIn" type="SETUP">
 <arg>\n===== INICIO DOS TESTES ======\n</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220706 01:19:24.243" endtime="20220706 01:19:24.243"/>
+<status status="PASS" starttime="20220706 01:26:57.729" endtime="20220706 01:26:57.730"/>
 </kw>
-<kw name="Iniciar">
-<kw name="Create WebDriver With Chrome Options">
-<msg timestamp="20220706 01:19:24.249" level="FAIL">No keyword with name 'Create WebDriver With Chrome Options' found. Did you try using keyword 'SeleniumLibrary.Create Webdriver' and forgot to use enough whitespace between keyword and arguments?</msg>
-<status status="FAIL" starttime="20220706 01:19:24.249" endtime="20220706 01:19:24.249"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${chrome_options}</var>
-<arg>selenium.webdriver.ChromeOptions()</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" starttime="20220706 01:19:24.250" endtime="20220706 01:19:24.250"/>
-</kw>
-<kw name="Call Method" library="BuiltIn">
-<arg>${chrome_options}</arg>
-<arg>add_argument</arg>
-<arg>--log-level\=3</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="NOT RUN" starttime="20220706 01:19:24.250" endtime="20220706 01:19:24.250"/>
-</kw>
-<kw name="Call Method" library="BuiltIn">
-<arg>${chrome_options}</arg>
-<arg>add_argument</arg>
-<arg>--start-maximized</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="NOT RUN" starttime="20220706 01:19:24.250" endtime="20220706 01:19:24.250"/>
-</kw>
-<kw name="Call Method" library="BuiltIn">
-<arg>${chrome_options}</arg>
-<arg>add_argument</arg>
-<arg>--window-size\=800,600</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="NOT RUN" starttime="20220706 01:19:24.250" endtime="20220706 01:19:24.250"/>
-</kw>
-<kw name="Call Method" library="BuiltIn">
-<arg>${chrome_options}</arg>
-<arg>add_argument</arg>
-<arg>--headless</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="NOT RUN" starttime="20220706 01:19:24.250" endtime="20220706 01:19:24.250"/>
-</kw>
-<kw name="Call Method" library="BuiltIn">
-<arg>${chrome_options}</arg>
-<arg>add_argument</arg>
-<arg>--disable-extensions</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="NOT RUN" starttime="20220706 01:19:24.250" endtime="20220706 01:19:24.250"/>
-</kw>
-<kw name="Create Webdriver" library="SeleniumLibrary">
-<arg>${browser}</arg>
-<arg>chrome_options=${chrome_options}</arg>
-<doc>Creates an instance of Selenium WebDriver.</doc>
-<status status="NOT RUN" starttime="20220706 01:19:24.250" endtime="20220706 01:19:24.250"/>
-</kw>
+<kw name="Dado que acesso o site Blazedemo">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="NOT RUN" starttime="20220706 01:19:24.251" endtime="20220706 01:19:24.251"/>
+<msg timestamp="20220706 01:26:57.731" level="INFO">Opening browser 'Chrome' to base url 'https://www.blazedemo.com'.</msg>
+<status status="PASS" starttime="20220706 01:26:57.731" endtime="20220706 01:27:00.545"/>
 </kw>
-<status status="FAIL" starttime="20220706 01:19:24.244" endtime="20220706 01:19:24.251"/>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>xpath = //h1</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20220706 01:27:00.545" endtime="20220706 01:27:00.615"/>
 </kw>
-<kw name="Dado que acesso o site Blazedemo">
-<status status="NOT RUN" starttime="20220706 01:19:24.252" endtime="20220706 01:19:24.252"/>
+<kw name="Wait Until Element Contains" library="SeleniumLibrary">
+<arg>xpath = //h1</arg>
+<arg>Welcome to the Simple Travel Agency!</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" starttime="20220706 01:27:00.615" endtime="20220706 01:27:00.643"/>
+</kw>
+<kw name="Wait For Condition" library="SeleniumLibrary">
+<arg>return document.title == "BlazeDemo"</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" starttime="20220706 01:27:00.644" endtime="20220706 01:27:00.649"/>
+</kw>
+<status status="PASS" starttime="20220706 01:26:57.730" endtime="20220706 01:27:00.650"/>
 </kw>
 <kw name="Quando seleciono destino como &quot;New York&quot; e seleciono a origem como &quot;São Paolo&quot;" sourcename="Quando seleciono destino como &quot;${destino}&quot; e seleciono a origem como &quot;${origem}&quot;">
-<status status="NOT RUN" starttime="20220706 01:19:24.252" endtime="20220706 01:19:24.252"/>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${destino}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220706 01:27:00.651" level="INFO">${destino} = New York</msg>
+<status status="PASS" starttime="20220706 01:27:00.651" endtime="20220706 01:27:00.652"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${origem}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20220706 01:27:00.652" level="INFO">${origem} = São Paolo</msg>
+<status status="PASS" starttime="20220706 01:27:00.652" endtime="20220706 01:27:00.652"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>name = fromPort</arg>
+<arg>${origem}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220706 01:27:00.653" level="INFO">Selecting options from selection list 'name = fromPort' by label São Paolo.</msg>
+<status status="PASS" starttime="20220706 01:27:00.652" endtime="20220706 01:27:00.732"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>name = toPort</arg>
+<arg>${destino}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220706 01:27:00.733" level="INFO">Selecting options from selection list 'name = toPort' by label New York.</msg>
+<status status="PASS" starttime="20220706 01:27:00.733" endtime="20220706 01:27:00.805"/>
+</kw>
+<status status="PASS" starttime="20220706 01:27:00.650" endtime="20220706 01:27:00.806"/>
 </kw>
 <kw name="E clico no botao find flights">
-<status status="NOT RUN" starttime="20220706 01:19:24.252" endtime="20220706 01:19:24.252"/>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>class = btn.btn-primary</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220706 01:27:00.806" level="INFO">Clicking button 'class = btn.btn-primary'.</msg>
+<status status="PASS" starttime="20220706 01:27:00.806" endtime="20220706 01:27:01.341"/>
+</kw>
+<status status="PASS" starttime="20220706 01:27:00.806" endtime="20220706 01:27:01.341"/>
 </kw>
 <kw name="Entao exibe o titulo informando a origem e o destino">
-<status status="NOT RUN" starttime="20220706 01:19:24.252" endtime="20220706 01:19:24.252"/>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath = //h3</arg>
+<arg>Flights from ${origem} to ${destino}:</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220706 01:27:01.380" level="INFO">Element 'xpath = //h3' contains text 'Flights from São Paolo to New York:'.</msg>
+<status status="PASS" starttime="20220706 01:27:01.343" endtime="20220706 01:27:01.380"/>
+</kw>
+<status status="PASS" starttime="20220706 01:27:01.342" endtime="20220706 01:27:01.380"/>
 </kw>
 <kw name="Quando seleciono o primeiro voo">
-<status status="NOT RUN" starttime="20220706 01:19:24.253" endtime="20220706 01:19:24.253"/>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>class = btn.btn-small</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220706 01:27:01.382" level="INFO">Clicking button 'class = btn.btn-small'.</msg>
+<status status="PASS" starttime="20220706 01:27:01.382" endtime="20220706 01:27:01.813"/>
+</kw>
+<status status="PASS" starttime="20220706 01:27:01.380" endtime="20220706 01:27:01.813"/>
 </kw>
 <kw name="E preencho o nome &quot;Juca&quot;">
-<status status="NOT RUN" starttime="20220706 01:19:24.253" endtime="20220706 01:19:24.253"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>inputName</arg>
+<arg>Juca</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220706 01:27:01.815" level="INFO">Typing text 'Juca' into text field 'inputName'.</msg>
+<status status="PASS" starttime="20220706 01:27:01.815" endtime="20220706 01:27:01.924"/>
+</kw>
+<status status="PASS" starttime="20220706 01:27:01.814" endtime="20220706 01:27:01.924"/>
 </kw>
 <kw name="E seleciono a bandeira &quot;American Express&quot;">
-<status status="NOT RUN" starttime="20220706 01:19:24.253" endtime="20220706 01:19:24.253"/>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>name = cardType</arg>
+<arg>American Express</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220706 01:27:01.925" level="INFO">Selecting options from selection list 'name = cardType' by label American Express.</msg>
+<status status="PASS" starttime="20220706 01:27:01.925" endtime="20220706 01:27:01.992"/>
+</kw>
+<status status="PASS" starttime="20220706 01:27:01.925" endtime="20220706 01:27:01.993"/>
 </kw>
 <kw name="E marco a opcao Remember me">
-<status status="NOT RUN" starttime="20220706 01:19:24.254" endtime="20220706 01:19:24.254"/>
+<kw name="Select Checkbox" library="SeleniumLibrary">
+<arg>id = rememberMe</arg>
+<doc>Selects the checkbox identified by ``locator``.</doc>
+<msg timestamp="20220706 01:27:01.994" level="INFO">Selecting checkbox 'id = rememberMe'.</msg>
+<status status="PASS" starttime="20220706 01:27:01.993" endtime="20220706 01:27:02.081"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>4000ms</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220706 01:27:06.088" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20220706 01:27:02.082" endtime="20220706 01:27:06.088"/>
+</kw>
+<status status="PASS" starttime="20220706 01:27:01.993" endtime="20220706 01:27:06.088"/>
 </kw>
 <kw name="E clico no botao &quot;Purchase flight&quot;">
-<status status="NOT RUN" starttime="20220706 01:19:24.254" endtime="20220706 01:19:24.254"/>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>class = btn.btn-primary</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220706 01:27:06.088" level="INFO">Clicking button 'class = btn.btn-primary'.</msg>
+<status status="PASS" starttime="20220706 01:27:06.088" endtime="20220706 01:27:06.499"/>
+</kw>
+<status status="PASS" starttime="20220706 01:27:06.088" endtime="20220706 01:27:06.500"/>
 </kw>
 <kw name="Entao exibe a mensagem &quot;Thank you for your purchase today!&quot;">
-<status status="NOT RUN" starttime="20220706 01:19:24.254" endtime="20220706 01:19:24.254"/>
+<kw name="Element Should Contain" library="SeleniumLibrary">
+<arg>xpath = //h1</arg>
+<arg>Thank you for your purchase today!</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<msg timestamp="20220706 01:27:06.534" level="INFO">Element 'xpath = //h1' contains text 'Thank you for your purchase today!'.</msg>
+<status status="PASS" starttime="20220706 01:27:06.503" endtime="20220706 01:27:06.534"/>
+</kw>
+<status status="PASS" starttime="20220706 01:27:06.503" endtime="20220706 01:27:06.535"/>
 </kw>
 <kw name="Encerrar" type="TEARDOWN">
 <kw name="Sleep" library="BuiltIn">
 <arg>4000ms</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220706 01:19:28.255" level="INFO">Slept 4 seconds</msg>
-<status status="PASS" starttime="20220706 01:19:24.255" endtime="20220706 01:19:28.256"/>
+<msg timestamp="20220706 01:27:10.548" level="INFO">Slept 4 seconds</msg>
+<status status="PASS" starttime="20220706 01:27:06.535" endtime="20220706 01:27:10.548"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220706 01:19:28.257" endtime="20220706 01:19:28.258"/>
+<status status="PASS" starttime="20220706 01:27:10.548" endtime="20220706 01:27:12.819"/>
 </kw>
-<status status="PASS" starttime="20220706 01:19:24.255" endtime="20220706 01:19:28.258"/>
+<status status="PASS" starttime="20220706 01:27:06.535" endtime="20220706 01:27:12.819"/>
 </kw>
 <tag>E2E</tag>
 <tag>Regression</tag>
 <tag>SMOKE</tag>
-<status status="FAIL" starttime="20220706 01:19:24.242" endtime="20220706 01:19:28.261">No keyword with name 'Create WebDriver With Chrome Options' found. Did you try using keyword 'SeleniumLibrary.Create Webdriver' and forgot to use enough whitespace between keyword and arguments?</status>
+<status status="PASS" starttime="20220706 01:26:57.728" endtime="20220706 01:27:12.823"/>
 </test>
 <doc>Fluxo de compra no site Blazedemo</doc>
-<status status="FAIL" starttime="20220706 01:19:23.953" endtime="20220706 01:19:28.276"/>
+<status status="PASS" starttime="20220706 01:26:57.417" endtime="20220706 01:27:12.831"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">E2E</stat>
-<stat pass="0" fail="1" skip="0">Regression</stat>
-<stat pass="0" fail="1" skip="0">SMOKE</stat>
+<stat pass="1" fail="0" skip="0">E2E</stat>
+<stat pass="1" fail="0" skip="0">Regression</stat>
+<stat pass="1" fail="0" skip="0">SMOKE</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Compra">Compra</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Compra">Compra</stat>
 </suite>
 </statistics>
 <errors>

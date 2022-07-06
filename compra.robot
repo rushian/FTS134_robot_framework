@@ -28,7 +28,7 @@ Compra de Passagem
 
 *** Keywords ***
 Dado que acesso o site Blazedemo
-    #open browser   ${url}    ${browser}  options=add_experimental_option(‘excludeSwitches’);add_experimental_option [‘enable-logging’]
+    open browser   ${url}    ${browser}
     wait until element is visible    xpath = //h1
     wait until element contains     xpath = //h1      Welcome to the Simple Travel Agency!
     wait for condition        return document.title == "BlazeDemo"
