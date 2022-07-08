@@ -9,11 +9,14 @@ Test Teardown   Encerrar
 *** Variables ***
 ${url}      https://www.blazedemo.com
 ${browser}  Chrome
+${bandeira}     American Express
+${mensagem}     Thank you for your purchase today!
+${preco}        555 USD
 
 
 *** Test Cases ***
 Compra de Passagem
-    [Tags]    E2E   Regression  SMOKE
+    [Tags]      E2E     Regression     SMOKE
     Dado que acesso o site Blazedemo
     Quando seleciono destino como "New York" e seleciono a origem como "São Paolo"
     E clico no botao find flights
@@ -46,18 +49,22 @@ Quando seleciono o primeiro voo
     click button    class = btn.btn-small
 E preencho o nome "Juca"
     input text  inputName   Juca
-E seleciono a bandeira "American Express"
-    select from list by label   name = cardType     American Express
+E seleciono a bandeira "${bandeira}"
+    select from list by label   name = cardType     ${bandeira}
 E marco a opcao Remember me
     select checkbox     id = rememberMe
     sleep       4000ms
 E clico no botao "Purchase flight"
     click button   class = btn.btn-primary
-Entao exibe a mensagem "Thank you for your purchase today!"
-    element should contain  xpath = //h1    Thank you for your purchase today!
-E exibe o preco da passagem como "555 USD"
+Entao exibe a mensagem "${mensagem}"
+    wait until element is visible   xpath=//h1
+    element should contain  xpath = //h1    ${mensagem}
+E exibe o preco da passagem como "${preco}"
     #xpath: encontrar linha que contenha o texto Amount e pegar o valor da segunda celula
     element should contain   xpath=//table[@class="table"]//tr[td[.="Amount"]]//td[2]    555 USD
+    element should contain   css= tr:nth-child(3)>td:nth-child(2)      ${preco}
+
+
 Encerrar
-    sleep       4000ms
+    sleep       1000ms
     close browser
