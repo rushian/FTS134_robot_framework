@@ -1,13 +1,29 @@
 *** Settings ***
 Documentation    Suite description
+Library     SeleniumLibrary
+Library     Browser
+Library     OperatingSystem
 
-*** Test Cases ***
-Test title
-    [Tags]    DEBUG
-    Provided precondition
-    When action
-    Then check expectations
+Resource    actions/index.robot
+Resource    actions/header.robot
+Resource    actions/reserve.robot
+Resource    actions/purchase.robot
+Resource    actions/confirmation.robot
 
+*** Variables ***
+${timeout}  5
+${url}      https://www.blazedemo.com
+${browser}  Chrome
 *** Keywords ***
-Provided precondition
-    Setup system under test
+Abrir navegador
+    open browser    ${url}  ${browser}
+Fechar navegador
+    close browser
+
+Ler json
+    [Arguments] ${nome_arquivo}
+    ${arquivo}  get file     ${EXECDIR}/resources/fixtures/${nome_arquivo}
+    ${arquivo_json}=     Evaluate    json.loads(${arquivo})   json
+    [return]    ${arquivo_json}
+
+
