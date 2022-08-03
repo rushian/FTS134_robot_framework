@@ -1,8 +1,10 @@
 *** Settings ***
 Documentation    mapeamento das acoes da pagina de compra
+Library     SeleniumLibrary
 
 *** Keywords ***
 Preencher nome "${nome}"
+    wait until element is enabled    id = inputname ${nome} 10
     input text  id = inputname  ${nome}
 
 Preencher endereco "${endereco}"
@@ -26,5 +28,8 @@ Preencher nome no cartao "${titular}"
     input text  id = nameOnCard ${titular}
 
 Clicar em lembrar de mim
-    checkbox should be selected     id = rememberMe
+    select checkbox     id = rememberMe
+
+Clicar no botao purchase a flight
+    click button    class = btn.btn-primary
 

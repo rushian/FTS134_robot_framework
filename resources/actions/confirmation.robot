@@ -1,12 +1,14 @@
 *** Settings ***
 Documentation    mapeamento das acoes da pagina de confirmacao
+Library     SeleniumLibrary
 
 *** Keywords ***
 Validar a mensagem de agradecimento ${mensagem}
+    wait until element is visible   tag = h1    3
     element should contain  tag = h1    ${mensagem}
 Validar o "${id}" da passagem
     element should contain  css = tr:nth-child(1) > td:nth-child(2)     ${id}
-Validar o "${preco}" da passagem
+Validar o preco da passagem "${preco}"
     element should contain  css = tr:nth-child(2) > td:nth-child(2)     ${preco}
 Validar o "${status}" da passagem
     element should contain  css = tr:nth-child(3) > td:nth-child(2)     ${status}

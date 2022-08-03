@@ -1,7 +1,6 @@
 *** Settings ***
 Documentation    Suite description
 Library     SeleniumLibrary
-Library     Browser
 Library     OperatingSystem
 
 Resource    actions/index.robot

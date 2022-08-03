@@ -1,203 +1,203 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220707 20:25:05.368" rpa="false" schemaversion="3">
-<suite id="s1" name="Compra" source="E:\dev\pyCharm\FTS134_robot_framework\compra.robot">
-<test id="s1-t1" name="Compra de Passagem" line="18">
-<kw name="Log To Console" library="BuiltIn" type="SETUP">
-<arg>\n===== INICIO DOS TESTES ======\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220707 20:25:05.674" endtime="20220707 20:25:05.674"/>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220803 01:46:22.860" rpa="false" schemaversion="3">
+<suite id="s1" name="By Appium Inspector" source="E:\dev\pyCharm\FTS134_robot_framework\tests\mobile\by_appium_inspector.robot">
+<test id="s1-t1" name="Adiciona camiseta no carrinho" line="23">
+<kw name="Open Application" library="AppiumLibrary" type="SETUP">
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${platformName}</arg>
+<arg>appium:automationName=${appium:automationName}</arg>
+<arg>appium:deviceName=${appium:deviceName}</arg>
+<arg>appium:appPackage=${appium:appPackage}</arg>
+<arg>appium:appActivity=${appium:appActivity}</arg>
+<arg>appium:avd=${appium:avd}</arg>
+<arg>appium:deviceOrientation=${appium:deviceOrientation}</arg>
+<arg>appium:ensureWebviewsHavePages=${appium:ensureWebviewsHavePages}</arg>
+<arg>appium:nativeWebScreenshot=${appium:nativeWebScreenshot}</arg>
+<arg>appium:newCommandTimeout=${appium:newCommandTimeout}</arg>
+<arg>appium:connectHardwareKeyboard=${appium:connectHardwareKeyboard}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<status status="PASS" starttime="20220803 01:46:23.183" endtime="20220803 01:46:43.376"/>
 </kw>
-<kw name="Dado que acesso o site Blazedemo">
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${url}</arg>
-<arg>${browser}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220707 20:25:05.676" level="INFO">Opening browser 'Chrome' to base url 'https://www.blazedemo.com'.</msg>
-<status status="PASS" starttime="20220707 20:25:05.675" endtime="20220707 20:25:08.567"/>
+<kw name="Espere &quot;Sauce Lab Bolt T-Shirt&quot;" sourcename="Espere &quot;${elemento}&quot;">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>accessibility_id=${elemento}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220803 01:46:43.382" endtime="20220803 01:46:46.234"/>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath = //h1</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220707 20:25:08.567" endtime="20220707 20:25:08.612"/>
+<status status="PASS" starttime="20220803 01:46:43.382" endtime="20220803 01:46:46.235"/>
 </kw>
-<kw name="Wait Until Element Contains" library="SeleniumLibrary">
-<arg>xpath = //h1</arg>
-<arg>Welcome to the Simple Travel Agency!</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" starttime="20220707 20:25:08.612" endtime="20220707 20:25:08.638"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>accessibility_id=Sauce Lab Bolt T-Shirt</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220803 01:46:46.243" level="INFO">Clicking element 'accessibility_id=Sauce Lab Bolt T-Shirt'.</msg>
+<status status="PASS" starttime="20220803 01:46:46.238" endtime="20220803 01:46:46.666"/>
 </kw>
-<kw name="Wait For Condition" library="SeleniumLibrary">
-<arg>return document.title == "BlazeDemo"</arg>
-<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
-<status status="PASS" starttime="20220707 20:25:08.638" endtime="20220707 20:25:08.644"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.FrameLayout[@content-desc="Container for fragments"]/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220803 01:46:46.673" level="INFO">Clicking element 'xpath=//android.widget.FrameLayout[@content-desc="Container for fragments"]/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView'.</msg>
+<status status="PASS" starttime="20220803 01:46:46.668" endtime="20220803 01:46:49.391"/>
 </kw>
-<status status="PASS" starttime="20220707 20:25:05.675" endtime="20220707 20:25:08.644"/>
+<kw name="Swipe" library="AppiumLibrary">
+<arg>489</arg>
+<arg>1149</arg>
+<arg>453</arg>
+<arg>588</arg>
+<doc>Swipe from one point to another point, for an optional duration.</doc>
+<status status="PASS" starttime="20220803 01:46:49.391" endtime="20220803 01:46:51.104"/>
 </kw>
-<kw name="Quando seleciono destino como &quot;New York&quot; e seleciono a origem como &quot;São Paolo&quot;" sourcename="Quando seleciono destino como &quot;${destino}&quot; e seleciono a origem como &quot;${origem}&quot;">
-<kw name="Set Test Variable" library="BuiltIn">
-<arg>${destino}</arg>
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20220707 20:25:08.645" level="INFO">${destino} = New York</msg>
-<status status="PASS" starttime="20220707 20:25:08.645" endtime="20220707 20:25:08.645"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.FrameLayout[@content-desc="Container for fragments"]/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220803 01:46:51.113" level="INFO">Clicking element 'xpath=//android.widget.FrameLayout[@content-desc="Container for fragments"]/android.widget.ScrollView/android.view.ViewGroup/android.widget.TextView'.</msg>
+<status status="PASS" starttime="20220803 01:46:51.108" endtime="20220803 01:46:51.403"/>
 </kw>
-<kw name="Set Test Variable" library="BuiltIn">
-<arg>${origem}</arg>
-<doc>Makes a variable available everywhere within the scope of the current test.</doc>
-<msg timestamp="20220707 20:25:08.646" level="INFO">${origem} = São Paolo</msg>
-<status status="PASS" starttime="20220707 20:25:08.645" endtime="20220707 20:25:08.646"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.saucelabs.mydemoapp.android:id/priceTV</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220803 01:46:51.408" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/priceTV'.</msg>
+<status status="PASS" starttime="20220803 01:46:51.404" endtime="20220803 01:46:51.522"/>
 </kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>name = fromPort</arg>
-<arg>${origem}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20220707 20:25:08.646" level="INFO">Selecting options from selection list 'name = fromPort' by label São Paolo.</msg>
-<status status="PASS" starttime="20220707 20:25:08.646" endtime="20220707 20:25:08.745"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.saucelabs.mydemoapp.android:id/start5IV</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220803 01:46:51.526" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/start5IV'.</msg>
+<status status="PASS" starttime="20220803 01:46:51.523" endtime="20220803 01:46:51.669"/>
 </kw>
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>name = toPort</arg>
-<arg>${destino}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20220707 20:25:08.746" level="INFO">Selecting options from selection list 'name = toPort' by label New York.</msg>
-<status status="PASS" starttime="20220707 20:25:08.745" endtime="20220707 20:25:08.829"/>
+<kw name="Espere ate ver &quot;Closes review dialog&quot;" sourcename="Espere ate ver &quot;${elemento}&quot;">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>accessibility_id=${elemento}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220803 01:46:51.676" endtime="20220803 01:46:52.364"/>
 </kw>
-<status status="PASS" starttime="20220707 20:25:08.644" endtime="20220707 20:25:08.829"/>
+<status status="PASS" starttime="20220803 01:46:51.675" endtime="20220803 01:46:52.365"/>
 </kw>
-<kw name="E clico no botao find flights">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>class = btn.btn-primary</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220707 20:25:08.830" level="INFO">Clicking button 'class = btn.btn-primary'.</msg>
-<status status="PASS" starttime="20220707 20:25:08.830" endtime="20220707 20:25:09.280"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>accessibility_id=Closes review dialog</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220803 01:46:52.368" level="INFO">Clicking element 'accessibility_id=Closes review dialog'.</msg>
+<status status="PASS" starttime="20220803 01:46:52.365" endtime="20220803 01:46:52.525"/>
 </kw>
-<status status="PASS" starttime="20220707 20:25:08.830" endtime="20220707 20:25:09.280"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.saucelabs.mydemoapp.android:id/noTV</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220803 01:46:52.531" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/noTV'.</msg>
+<status status="PASS" starttime="20220803 01:46:52.527" endtime="20220803 01:46:53.235"/>
 </kw>
-<kw name="Entao exibe o titulo informando a origem e o destino">
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>xpath = //h3</arg>
-<arg>Flights from ${origem} to ${destino}:</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20220707 20:25:09.331" level="INFO">Element 'xpath = //h3' contains text 'Flights from São Paolo to New York:'.</msg>
-<status status="PASS" starttime="20220707 20:25:09.282" endtime="20220707 20:25:09.331"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>accessibility_id=Increase item quantity</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220803 01:46:53.240" level="INFO">Clicking element 'accessibility_id=Increase item quantity'.</msg>
+<status status="PASS" starttime="20220803 01:46:53.237" endtime="20220803 01:46:53.390"/>
 </kw>
-<status status="PASS" starttime="20220707 20:25:09.282" endtime="20220707 20:25:09.331"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.saucelabs.mydemoapp.android:id/noTV</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220803 01:46:53.399" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/noTV'.</msg>
+<status status="PASS" starttime="20220803 01:46:53.394" endtime="20220803 01:46:54.054"/>
 </kw>
-<kw name="Quando seleciono o primeiro voo">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>class = btn.btn-small</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220707 20:25:09.333" level="INFO">Clicking button 'class = btn.btn-small'.</msg>
-<status status="PASS" starttime="20220707 20:25:09.332" endtime="20220707 20:25:09.822"/>
+<kw name="Espere &quot;Tap to add product to cart&quot;" sourcename="Espere &quot;${elemento}&quot;">
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>accessibility_id=${elemento}</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<status status="PASS" starttime="20220803 01:46:54.055" endtime="20220803 01:46:54.100"/>
 </kw>
-<status status="PASS" starttime="20220707 20:25:09.332" endtime="20220707 20:25:09.822"/>
+<status status="PASS" starttime="20220803 01:46:54.055" endtime="20220803 01:46:54.101"/>
 </kw>
-<kw name="E preencho o nome &quot;Juca&quot;">
-<kw name="Input Text" library="SeleniumLibrary">
-<arg>inputName</arg>
-<arg>Juca</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220707 20:25:09.825" level="INFO">Typing text 'Juca' into text field 'inputName'.</msg>
-<status status="PASS" starttime="20220707 20:25:09.825" endtime="20220707 20:25:09.971"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>accessibility_id=Tap to add product to cart</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220803 01:46:54.107" level="INFO">Clicking element 'accessibility_id=Tap to add product to cart'.</msg>
+<status status="PASS" starttime="20220803 01:46:54.103" endtime="20220803 01:46:54.307"/>
 </kw>
-<status status="PASS" starttime="20220707 20:25:09.824" endtime="20220707 20:25:09.971"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>xpath=//android.widget.RelativeLayout[@content-desc="Displays number of items in your cart"]/android.widget.ImageView</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220803 01:46:54.318" level="INFO">Clicking element 'xpath=//android.widget.RelativeLayout[@content-desc="Displays number of items in your cart"]/android.widget.ImageView'.</msg>
+<status status="PASS" starttime="20220803 01:46:54.312" endtime="20220803 01:46:55.160"/>
 </kw>
-<kw name="E seleciono a bandeira &quot;American Express&quot;" sourcename="E seleciono a bandeira &quot;${bandeira}&quot;">
-<kw name="Select From List By Label" library="SeleniumLibrary">
-<arg>name = cardType</arg>
-<arg>${bandeira}</arg>
-<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
-<msg timestamp="20220707 20:25:09.973" level="INFO">Selecting options from selection list 'name = cardType' by label American Express.</msg>
-<status status="PASS" starttime="20220707 20:25:09.973" endtime="20220707 20:25:10.067"/>
+<kw name="Espere ver &quot;id&quot; &quot;com.saucelabs.mydemoapp.android:id/productTV&quot;" sourcename="Espere ver &quot;${locator}&quot; &quot;${elemento}&quot;">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${locator}=${elemento}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" starttime="20220803 01:46:55.162" endtime="20220803 01:46:56.556"/>
 </kw>
-<status status="PASS" starttime="20220707 20:25:09.972" endtime="20220707 20:25:10.067"/>
+<status status="PASS" starttime="20220803 01:46:55.161" endtime="20220803 01:46:56.557"/>
 </kw>
-<kw name="E marco a opcao Remember me">
-<kw name="Select Checkbox" library="SeleniumLibrary">
-<arg>id = rememberMe</arg>
-<doc>Selects the checkbox identified by ``locator``.</doc>
-<msg timestamp="20220707 20:25:10.069" level="INFO">Selecting checkbox 'id = rememberMe'.</msg>
-<status status="PASS" starttime="20220707 20:25:10.069" endtime="20220707 20:25:10.160"/>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.saucelabs.mydemoapp.android:id/productTV</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220803 01:46:56.562" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/productTV'.</msg>
+<status status="PASS" starttime="20220803 01:46:56.558" endtime="20220803 01:46:56.726"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.saucelabs.mydemoapp.android:id/titleTV</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220803 01:46:56.730" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/titleTV'.</msg>
+<status status="PASS" starttime="20220803 01:46:56.727" endtime="20220803 01:46:56.887"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.saucelabs.mydemoapp.android:id/priceTV</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220803 01:46:56.891" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/priceTV'.</msg>
+<status status="PASS" starttime="20220803 01:46:56.888" endtime="20220803 01:46:57.070"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>accessibility_id=Displays color of selected product</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220803 01:46:57.076" level="INFO">Clicking element 'accessibility_id=Displays color of selected product'.</msg>
+<status status="PASS" starttime="20220803 01:46:57.071" endtime="20220803 01:46:57.237"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.saucelabs.mydemoapp.android:id/noTV</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220803 01:46:57.243" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/noTV'.</msg>
+<status status="PASS" starttime="20220803 01:46:57.238" endtime="20220803 01:46:57.424"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.saucelabs.mydemoapp.android:id/itemsTV</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220803 01:46:57.430" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/itemsTV'.</msg>
+<status status="PASS" starttime="20220803 01:46:57.425" endtime="20220803 01:46:57.622"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>id=com.saucelabs.mydemoapp.android:id/totalPriceTV</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220803 01:46:57.629" level="INFO">Clicking element 'id=com.saucelabs.mydemoapp.android:id/totalPriceTV'.</msg>
+<status status="PASS" starttime="20220803 01:46:57.625" endtime="20220803 01:46:57.854"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
-<arg>4000ms</arg>
+<arg>5</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220707 20:25:14.170" level="INFO">Slept 4 seconds</msg>
-<status status="PASS" starttime="20220707 20:25:10.160" endtime="20220707 20:25:14.170"/>
+<msg timestamp="20220803 01:47:02.859" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20220803 01:46:57.855" endtime="20220803 01:47:02.859"/>
 </kw>
-<status status="PASS" starttime="20220707 20:25:10.068" endtime="20220707 20:25:14.170"/>
+<kw name="Quit Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Quit application. Application can be quit while Appium session is kept alive.
+This keyword can be used to close application during test case or between test cases.</doc>
+<status status="PASS" starttime="20220803 01:47:02.860" endtime="20220803 01:47:03.494"/>
 </kw>
-<kw name="E clico no botao &quot;Purchase flight&quot;">
-<kw name="Click Button" library="SeleniumLibrary">
-<arg>class = btn.btn-primary</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220707 20:25:14.172" level="INFO">Clicking button 'class = btn.btn-primary'.</msg>
-<status status="PASS" starttime="20220707 20:25:14.171" endtime="20220707 20:25:14.608"/>
-</kw>
-<status status="PASS" starttime="20220707 20:25:14.171" endtime="20220707 20:25:14.608"/>
-</kw>
-<kw name="Entao exibe a mensagem &quot;Thank you for your purchase today!&quot;" sourcename="Entao exibe a mensagem &quot;${mensagem}&quot;">
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath=//h1</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20220707 20:25:14.624" endtime="20220707 20:25:14.662"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>xpath = //h1</arg>
-<arg>${mensagem}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20220707 20:25:14.681" level="INFO">Element 'xpath = //h1' contains text 'Thank you for your purchase today!'.</msg>
-<status status="PASS" starttime="20220707 20:25:14.662" endtime="20220707 20:25:14.681"/>
-</kw>
-<status status="PASS" starttime="20220707 20:25:14.623" endtime="20220707 20:25:14.681"/>
-</kw>
-<kw name="E exibe o preco da passagem como &quot;555 USD&quot;" sourcename="E exibe o preco da passagem como &quot;${preco}&quot;">
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>xpath=//table[@class="table"]//tr[td[.="Amount"]]//td[2]</arg>
-<arg>555 USD</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20220707 20:25:14.711" level="INFO">Element 'xpath=//table[@class="table"]//tr[td[.="Amount"]]//td[2]' contains text '555 USD'.</msg>
-<status status="PASS" starttime="20220707 20:25:14.682" endtime="20220707 20:25:14.711"/>
-</kw>
-<kw name="Element Should Contain" library="SeleniumLibrary">
-<arg>css= tr:nth-child(3)&gt;td:nth-child(2)</arg>
-<arg>${preco}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<msg timestamp="20220707 20:25:14.732" level="INFO">Element 'css= tr:nth-child(3)&gt;td:nth-child(2)' contains text '555 USD'.</msg>
-<status status="PASS" starttime="20220707 20:25:14.711" endtime="20220707 20:25:14.732"/>
-</kw>
-<status status="PASS" starttime="20220707 20:25:14.682" endtime="20220707 20:25:14.732"/>
-</kw>
-<kw name="Encerrar" type="TEARDOWN">
-<kw name="Sleep" library="BuiltIn">
-<arg>1000ms</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20220707 20:25:15.744" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220707 20:25:14.733" endtime="20220707 20:25:15.744"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220707 20:25:15.744" endtime="20220707 20:25:18.026"/>
-</kw>
-<status status="PASS" starttime="20220707 20:25:14.733" endtime="20220707 20:25:18.027"/>
-</kw>
-<tag>E2E</tag>
-<tag>Regression</tag>
-<tag>SMOKE</tag>
-<status status="PASS" starttime="20220707 20:25:05.673" endtime="20220707 20:25:18.028"/>
+<status status="PASS" starttime="20220803 01:46:23.182" endtime="20220803 01:47:03.499"/>
 </test>
-<doc>Fluxo de compra no site Blazedemo</doc>
-<status status="PASS" starttime="20220707 20:25:05.370" endtime="20220707 20:25:18.029"/>
+<kw name="Close Application" library="AppiumLibrary" type="TEARDOWN">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" starttime="20220803 01:47:03.510" endtime="20220803 01:47:05.195"/>
+</kw>
+<status status="PASS" starttime="20220803 01:46:22.862" endtime="20220803 01:47:05.195"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">E2E</stat>
-<stat pass="1" fail="0" skip="0">Regression</stat>
-<stat pass="1" fail="0" skip="0">SMOKE</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Compra">Compra</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="By Appium Inspector">By Appium Inspector</stat>
 </suite>
 </statistics>
 <errors>
