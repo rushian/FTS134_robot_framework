@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation   Tela de carrinho de compras
-Library         AppiumLibrary
+Library     AppiumLibrary
 Library     BuiltIn
 
 *** Keywords ***
